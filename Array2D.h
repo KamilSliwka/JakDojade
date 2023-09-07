@@ -9,7 +9,16 @@ class Array2D {
     char** p;
     int w = 0;
     int h = 0;
-
+public:
+    char GetSignFromMap(int x, int y) {
+        if (x < 0 || y < 0 || y >= w || x >= h) {
+            return('.');
+        }
+        else {
+            return p[x][y];
+        }
+    }
+private:
     Array2D(int ww, int hh) {
 
         w = ww;
@@ -31,14 +40,6 @@ class Array2D {
         }
     }
 
-    char GetSignFromMap(int x, int y) {
-        if (x < 0 || y < 0 || y >= w || x >= h) {
-            return('.');
-        }
-        else {
-            return p[x][y];
-        }
-    }
 
     ~Array2D() {
         for (int i = 0; i < h; i++) {

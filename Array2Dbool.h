@@ -10,18 +10,7 @@ class Array2Dbool {
     bool** p;
     int w = 0;
     int h = 0;
-
-    Array2Dbool(int ww, int hh) {
-
-        w = ww;
-        h = hh;
-        p = new bool* [h];
-        for (int i = 0; i < h; i++) {
-            p[i] = new bool[w];
-            memset(p[i], false, w);
-        }
-    }
-
+public:
     void SetBoolOnMap(int x, int y,bool t) {
         p[x][y]=t;
 
@@ -38,6 +27,18 @@ class Array2Dbool {
             memset(p[i], false, w);
         }
     }
+private:
+    Array2Dbool(int ww, int hh) {
+
+        w = ww;
+        h = hh;
+        p = new bool* [h];
+        for (int i = 0; i < h; i++) {
+            p[i] = new bool[w];
+            memset(p[i], false, w);
+        }
+    }
+
 
     ~Array2Dbool() {
         for (int i = 0; i < h; i++) {
