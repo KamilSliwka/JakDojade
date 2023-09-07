@@ -7,10 +7,11 @@
 using namespace std;
 
 class Array2Dbool {
+public:
     bool** p;
     int w = 0;
     int h = 0;
-public:
+
     void SetBoolOnMap(int x, int y,bool t) {
         p[x][y]=t;
 
@@ -27,7 +28,7 @@ public:
             memset(p[i], false, w);
         }
     }
-private:
+
     Array2Dbool(int ww, int hh) {
 
         w = ww;

@@ -6,10 +6,11 @@
 using namespace std;
 
 class Array2D {
+public:
     char** p;
     int w = 0;
     int h = 0;
-public:
+
     char GetSignFromMap(int x, int y) {
         if (x < 0 || y < 0 || y >= w || x >= h) {
             return('.');
@@ -18,7 +19,7 @@ public:
             return p[x][y];
         }
     }
-private:
+
     Array2D(int ww, int hh) {
 
         w = ww;
